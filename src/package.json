@@ -1,0 +1,26 @@
+{
+  "name": "@wizquest-labs/xml-types-validator",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wizquest-labs/xml-types-validator.git"
+  },
+  "author": {
+    "name": "Wizquest Labs Pvt Ltd",
+    "email": "contact@wizquest.io"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "git@github.com:wizquest-labs/xml-types-validator.git/issues"
+  },
+  "module": "wizquest-labs-xml-types-validator.js",
+  "typings": "wizquest-labs-xml-types-validator.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
