@@ -11,7 +11,7 @@ var StringStripper = (function () {
     function StringStripper() {
     }
     StringStripper.strip = function (value) {
-        return value.replace(/[ \t\n\r]+/, ' ').replace(/^ +/, '').replace(/ +$/, '');
+        return value.replace(/[ \t\n\r]+/g, ' ').replace(/^ +/, '').replace(/ +$/, '');
     };
     return StringStripper;
 }());

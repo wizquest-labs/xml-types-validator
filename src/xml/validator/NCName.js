@@ -5,36 +5,37 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var StringStripper_1 = require("./common/StringStripper");
 /**
- * This type is used to validate tokens
+ * This type is used to validate NC Names
  *
  * @author Rishabh Jain
  * @version 0.0.1
  * */
-var TokenValidator = (function () {
-    function TokenValidator(val) {
-        this.val = StringStripper_1.StringStripper.strip(val);
+var NCName = (function () {
+    function NCName(val) {
+        if (val != null && typeof val != 'undefined' && NCName.isValid(val))
+            this.val = StringStripper_1.StringStripper.strip(val);
     }
-    Object.defineProperty(TokenValidator.prototype, "val", {
+    Object.defineProperty(NCName.prototype, "val", {
         get: function () {
             return this._val;
         },
         set: function (value) {
-            if (TokenValidator.isValid(value))
+            if (NCName.isValid(value))
                 this._val = value;
             else
-                throw new Error('Invalid token');
+                throw new Error('Invalid NCName');
         },
         enumerable: true,
         configurable: true
     });
-    TokenValidator.isValid = function (value) {
+    NCName.isValid = function (value) {
         value = StringStripper_1.StringStripper.strip(value);
-        if (TokenValidator.regex.test(value))
+        if (NCName.regex.test(value))
             return true;
         else
             return false;
     };
-    return TokenValidator;
+    return NCName;
 }());
-TokenValidator.regex = /^.*$/;
-exports.TokenValidator = TokenValidator;
+NCName.regex = /^[a-z_][-_\.a-z0-9]+$/;
+exports.NCName = NCName;

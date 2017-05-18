@@ -9,13 +9,14 @@ import {StringStripper} from "./common/StringStripper";
  * @version 0.0.1
  * */
 
-export class TokenValidator {
+export class Token {
     private static readonly regex = /^.*$/;
 
     private _val: string;
 
     constructor(val?: string) {
-        this.val = StringStripper.strip(val);
+        if (val != null && typeof val != 'undefined' && Token.isValid(val))
+            this.val = StringStripper.strip(val);
     }
 
     get val(): string {
@@ -23,14 +24,14 @@ export class TokenValidator {
     }
 
     set val(value: string) {
-        if (TokenValidator.isValid(value))
+        if (Token.isValid(value))
             this._val = value;
         else throw new Error('Invalid token');
     }
 
     static isValid(value: string) {
         value = StringStripper.strip(value);
-        if (TokenValidator.regex.test(value))
+        if (Token.regex.test(value))
             return true;
         else return false;
     }

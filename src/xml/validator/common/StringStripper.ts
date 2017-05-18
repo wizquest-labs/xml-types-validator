@@ -7,6 +7,6 @@
  * */
 export class StringStripper {
     public static strip(value: string) {
-        return value.replace(/[ \t\n\r]+/, ' ').replace(/^ +/, '').replace(/ +$/, '');
+        return value.replace(/[ \t\n\r]+/g, ' ').replace(/^ +/, '').replace(/ +$/, '');
     }
 }
