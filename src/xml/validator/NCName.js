@@ -37,5 +37,5 @@ var NCName = (function () {
     };
     return NCName;
 }());
-NCName.regex = /^[a-z_][-_\.a-z0-9]+$/;
+NCName.regex = /^[a-zA-Z_][-_\.a-zA-Z0-9]+$/;
 exports.NCName = NCName;
